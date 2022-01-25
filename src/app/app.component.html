@@ -1,0 +1,118 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="8">
+        Solution 1 -> Fill pixels at: (8,2) using Yellow, (8,4) and (9,5) using
+        Blue
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of table1">
+      <td
+        *ngFor="let col of row"
+        [ngStyle]="{ 'background-color': getColor(col) }"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<table>
+  <tr *ngFor="let row of table2">
+    <td
+      *ngFor="let col of row"
+      [ngStyle]="{ 'background-color': getColor(col) }"
+    >
+      &nbsp;
+    </td>
+  </tr>
+</table>
+<br />
+<table>
+  <tr *ngFor="let row of table3">
+    <td
+      *ngFor="let col of row"
+      [ngStyle]="{ 'background-color': getColor(col) }"
+    >
+      &nbsp;
+    </td>
+  </tr>
+</table>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="9">
+        Solution 2 -> Example 2: Fill row 3 from column 2 to 7 and row 4 from
+        column 5 to 6 using Blue:
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of table4">
+      <td
+        *ngFor="let col of row"
+        [ngStyle]="{ 'background-color': getColor(col) }"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+<table>
+  <tr *ngFor="let row of table5">
+    <td
+      *ngFor="let col of row"
+      [ngStyle]="{ 'background-color': getColor(col) }"
+    >
+      &nbsp;
+    </td>
+  </tr>
+</table>
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="9">
+        Solution 3 -> Fill column 3 from row 2 to 6 using Green ->
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of table6">
+      <td
+        *ngFor="let col of row"
+        [ngStyle]="{ 'background-color': getColor(col) }"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="9">Solution 4 -> Flood pixel at (6,3) using Red -></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of table7">
+      <td
+        *ngFor="let col of row"
+        [ngStyle]="{ 'background-color': getColor(col) }"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
