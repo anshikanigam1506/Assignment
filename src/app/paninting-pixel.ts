@@ -8,19 +8,7 @@ export class PaintingPixel {
   private totalRows = 0;
   private totalColumn = 0;
 
-  colorItRow(row: number, colFrom: number, colTo: number, color: string): void {
-    for (let i = colFrom; i <= colTo; i++) {
-      this.colorIt(i, row, color);
-    }
-  }
-
-  colorItCol(col: number, rowFrom: number, rowTo: number, color: string): void {
-    for (let i = rowFrom; i <= rowTo; i++) {
-      this.colorIt(col, i, color);
-    }
-  }
-
-  colorIt(col: number, row: number, color: string): void {
+  fillColor(col: number, row: number, color: string): void {
     if (!this.map[row]) {
       this.map[row] = [];
     }
@@ -38,6 +26,18 @@ export class PaintingPixel {
       return this.map[row][col];
     }
     return 'White';
+  }
+
+	rowColor(row: number, colFrom: number, colTo: number, color: string): void {
+    for (let i = colFrom; i <= colTo; i++) {
+      this.fillColor(i, row, color);
+    }
+  }
+
+  colColor(col: number, rowFrom: number, rowTo: number, color: string): void {
+    for (let i = rowFrom; i <= rowTo; i++) {
+      this.fillColor(col, i, color);
+    }
   }
 
   createScreen(): string[][] {
@@ -67,7 +67,7 @@ export class PaintingPixel {
     ) {
       return;
     }
-    this.colorIt(col, row, newColor);
+    this.fillColor(col, row, newColor);
     this.floodRecursive(col + 1, row, oldColor, newColor);
     this.floodRecursive(col - 1, row, oldColor, newColor);
     this.floodRecursive(col, row + 1, oldColor, newColor);

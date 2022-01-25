@@ -17,17 +17,17 @@ export class AppComponent {
   table7: string[][] = [];
 
   constructor(public pixel: PaintingPixel) {
-    pixel.colorIt(8, 2, 'Yellow');
+    pixel.fillColor(8, 2, 'Yellow');
     this.table1 = pixel.createScreen();
-    pixel.colorIt(8, 4, 'Blue');
+    pixel.fillColor(8, 4, 'Blue');
     this.table2 = pixel.createScreen();
-    pixel.colorIt(9, 5, 'Blue');
+    pixel.fillColor(9, 5, 'Blue');
     this.table3 = pixel.createScreen();
-    pixel.colorItRow(3, 2, 7, 'Blue');
+    pixel.rowColor(3, 2, 7, 'Blue');
     this.table4 = pixel.createScreen();
-    pixel.colorItRow(4, 5, 6, 'Blue');
+    pixel.rowColor(4, 5, 6, 'Blue');
     this.table5 = pixel.createScreen();
-    pixel.colorItCol(3, 2, 6, 'Green');
+    pixel.colColor(3, 2, 6, 'Green');
     this.table6 = pixel.createScreen();
     pixel.floodFill(6, 3, 'Red');
     this.table7 = pixel.createScreen();
